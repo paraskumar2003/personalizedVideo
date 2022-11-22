@@ -153,6 +153,46 @@
             text-transform: uppercase;
         }
 
+        @media only screen and (max-width:768px) {
+     
+            .main-container{
+                flex-direction: column;
+            }
+            .input-container, .main-vid-container{
+                width: 100%;
+                align-content: center;
+                text-align: center;
+                margin: 4rem auto;
+            }
+            .main-vid-container{
+                height: 220px;
+            }
+            .input-container h1{
+                margin: 0 auto;
+            }
+            .alert{
+                margin: 0 auto;
+            }
+
+}
+        @media (max-width:400px) {
+            .video-element p{
+                font-size: 16px !important;
+            }
+            .video-element a{
+                font-size: 16px !important;
+            }
+            .twenty-one{
+                font-size: 20px !important;
+            }
+            .pizza-p-mobile{
+                font-size: 14px !important;
+            }
+            input{
+                border-radius: 0 !important;
+                margin-top: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -168,7 +208,7 @@
                     <input class="name-input" type="text" required>
                 </div>
                 <div>
-                    <h2>E-mail</h2>
+                    <h2>Business Email</h2>
                     <input class="email-input" type="email" required>
                 </div>
                 <button type="submit" class="btn-submit">Personalise</button>
@@ -315,10 +355,10 @@
             }else if(video.currentTime > 10 && video.currentTime < 14.2){ 
                 if(Name[0].length < 7){
 
-                    videoElement.innerHTML = `<p class='inter' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:28px;'>${Name[0]}</p>`;
+                    videoElement.innerHTML = `<p class='inter pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:28px;'>${Name[0]}</p>`;
                     videoElement.style.cssText = `display:block;top:25%;left:46%;z-index:11;opacity:1;`;
                 }else{
-                    videoElement.innerHTML = `<p class='inter' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:22px;'>${Name[0]}</p>`;
+                    videoElement.innerHTML = `<p class='inter pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:22px;'>${Name[0]}</p>`;
                     videoElement.style.cssText = `display:block;top:26%;left:46%;z-index:11;opacity:1;`;
 
                 }
@@ -329,7 +369,7 @@
 
 
             }else if(video.currentTime > 21.25 && video.currentTime < 22.25){
-                videoElement.innerHTML = `<p class='inter' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:400;font-size:50px;'>${Name[0]}</p>`;
+                videoElement.innerHTML = `<p class='inter twenty-one' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:400;font-size:50px;'>${Name[0]}</p>`;
                 videoElement.style.cssText = `display:block;top:45%;left:40%;z-index:11;opacity:1;transition:none;`;
 
 
