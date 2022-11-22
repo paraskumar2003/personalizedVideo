@@ -175,7 +175,13 @@
             }
 
 }
+.main-vid-container h1{
+    display: none;
+}
         @media (max-width:400px) {
+            .main-container{
+                position: relative;
+            }
             .video-element p{
                 font-size: 16px !important;
             }
@@ -191,6 +197,33 @@
             input{
                 border-radius: 0 !important;
                 margin-top: 15px;
+            }
+            .main-vid-container h1{
+                font-weight: 400;
+                font-size: 28px;
+                margin: 4rem auto 8rem auto;
+                padding: 0 1rem;
+                line-height: 40px;
+            }
+            .main-vid-container{
+                display: none;
+                opacity: 0;
+                transition: 1s all ease;
+            }
+            .hide-at-mobile{
+                display: none;
+            }
+            .show-at-mobile{
+                display: block !important;
+            }
+            .opaque{
+                opacity: 1 !important;
+            }
+            .show-at-mobile h1{
+                display: block !important;
+            }
+            body{
+                align-items: flex-start;
             }
         }
     </style>
@@ -216,7 +249,9 @@
         </div>
 
         <div class="main-vid-container">
+            <h1>Enter you Name to create a personalized video right now !</h1>
             <div class="video-container">
+
 
                 <video class="my-video" src="/Assets/My Movie.mp4"  controls></video>
             </div>
@@ -242,6 +277,13 @@
         let gif = document.querySelector('.gif');
         let alert = document.querySelector('.alert');
         let alertContainer = document.querySelector('.alert-container');
+        let inputContainer = document.querySelector('.input-container');
+        let mainVidContainer = document.querySelector('.main-vid-container');
+
+
+
+
+
         video.style.opacity = `0`;
 
 
@@ -281,6 +323,12 @@
                 
                 if(company !== undefined){                    
                     gif.style.display = `block`;
+                    inputContainer.classList.add('hide-at-mobile');
+                    mainVidContainer.classList.add('show-at-mobile');
+                    setTimeout(()=>{
+                        mainVidContainer.classList.add('opaque');
+                    },500)
+                     
                 alert.textContent = ``;
                 alertContainer.style.padding = `0`;
                 setTimeout(()=>{
