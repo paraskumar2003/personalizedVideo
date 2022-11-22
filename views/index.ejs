@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+        .main-container{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-container{
+            width: 50%;
+            padding: 1rem 3rem;
+        }
+        .left-container h2{
+            font-size: 33px;
+            font-weight: 400;
+            line-height: 40px;
+            margin-bottom: 10px;
+        }
+        .input-container{
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-container label{
+            font-size: 33px;
+            font-weight: 700;
+        }
+        .input-container input{
+            border: 1px solid #000;
+            width: 300px;
+            padding: 8px 1rem;
+            font-size: 35px;
+            border-radius: 10px;
+            color: #000;
+        }
+        .input-container button{
+            width: 200px;
+            padding: 5px 12px;
+            border-radius: 10px;
+            background-color: #5B52EE;
+            border: none;
+            font-size: 35px;
+            font-weight: 700;
+            color: white;
+        }
+        .right-container{
+            width: 50%;
+            padding: 3rem;
+        }
+        .right-container img{
+            width: 100%;
+        }
+        @media(max-width:768px) {
+            .main-container{
+                flex-direction: column;
+            }
+            .left-container, .right-container{
+                width: 100%;
+                padding: 1rem;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <h2>Enter Your name to create a personalized video right now.</h2>
+            <form method="post" action="/name-submitted" class="input-container">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" name="name">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="right-container">
+
+            <img src="/Images/thumbnail.png" alt="">
+
+            
+            
+
+        </div>
+    </div>
+    <script>
+
+async function funcName(){
+                const response = await fetch('http://localhost:4000/video')
+                var data = await response.json();
+                console.log(data);
+                }
+
+                
+
+                funcName();
+    </script>
+</body>
+</html>
