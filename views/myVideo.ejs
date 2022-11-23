@@ -222,6 +222,9 @@
             .show-at-mobile h1{
                 display: block !important;
             }
+            button{
+                cursor: pointer;
+            }
             body{
                 align-items: flex-start;
             }
@@ -315,11 +318,10 @@
 
                 Name.length = 0;
                 Company.length = 0;
-                
-                Name.push(name.value);
+                let firstName = name.value.split(" ");
+                Name.push(firstName[0]);
                 let company = fetchCompanyName(email.value);
                 Company.push(company);
-                console.log(company);
                 
                 if(company !== undefined){                    
                     gif.style.display = `block`;
