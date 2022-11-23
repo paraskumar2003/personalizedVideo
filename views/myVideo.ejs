@@ -253,7 +253,7 @@
             <div class="video-container">
 
 
-                <video class="my-video" playsinline="true" webkit-playsinline="true" src="/Assets/My Movie.mp4"  controls></video>
+                <video class="my-video" src="/Assets/My Movie.mp4"  controls></video>
             </div>
 
 
@@ -373,7 +373,7 @@
 
 
 
-            }else if(video.currentTime < 1.5){
+            }else if( video.currentTime > 0.2 && video.currentTime < 1.5){
                 videoElement.innerHTML = `<p class='playfair' style='color:#fff;z-index:11;opacity:1;filter:blur(0px)'>Hey ${Name[0]}</p>`;
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
 
