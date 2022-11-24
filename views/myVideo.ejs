@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Inter:wght@200;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 
 
     <style>
@@ -117,10 +121,14 @@
             font-weight: 700;
             font-size: 36px;
             opacity: 0;
-            /* transition: 0.2s all ease; */
+            transition: 0.2s all ease;
+        }
+        
+        .figtree{
+            font-family: 'Figtree',sans-serif;
         }
         .playfair{
-            font-family: 'Figtree', sans-serif;
+            font-family: 'Playfair Display', sans-serif;
         }
         .inter{
             font-family: 'Inter',sans-serif;
@@ -242,7 +250,7 @@
 <body>
     <div class="main-container">
         <div class="input-container">
-            <h1>Enter you Name to create a personalized video right now !</h1>
+            <h1>Enter your Name to create a personalized video right now !</h1>
             <div class="alert-container">
                 <div class="alert"></div>
             </div>
@@ -373,30 +381,32 @@
 
             }else if(video.currentTime > 5.6 && video.currentTime < 6.6){
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
-                videoElement.innerHTML = `<p class='playfair ' style='color:#fff;z-index:11;opacity:1;'><span class='uppercase'>${Company[0]}</span> Wishes You</p>`;
+                videoElement.innerHTML = `<p data-aos="fade-in" 
+                data-aos-duration="200" class='playfair fade-in' style='color:#fff;z-index:11;opacity:1;'><span class='uppercase'>${Company[0]}</span> Wishes You</p>`;
 
 
 
             }else if(video.currentTime > 7 && video.currentTime < 9){
-                videoElement.innerHTML = `<p class='playfair' style='color:#fff;z-index:11;opacity:1;filter:blur(0px)'>A Happy Diwali ${Name[0]}</p>`;
+                videoElement.innerHTML = `<p data-aos="fade-in" 
+                data-aos-duration="200" class='playfair fade-in' style='color:#fff;z-index:11;opacity:1;filter:blur(0px)'>A Happy Diwali ${Name[0]}</p>`;
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
 
 
 
             }else if( video.currentTime > 0.2 && video.currentTime < 1.5){
-                videoElement.innerHTML = `<p class='playfair' style='color:#fff;z-index:11;opacity:1;filter:blur(0px)'>Hey ${Name[0]}</p>`;
+                videoElement.innerHTML = `<p class='figtree' style='color:#fff;z-index:11;opacity:1;filter:blur(0px)'>Hey ${Name[0]}</p>`;
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
 
 
 
             }else if(video.currentTime > 1.5 && video.currentTime < 2.7){
-                videoElement.innerHTML = `<p class='playfair' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);text-align:center;'>Let us show what DUALITE can do for your company <span class='uppercase'>${Company[0]}</span>.</p>`;
+                videoElement.innerHTML = `<p class='figtree' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);text-align:center;text-transform:none;'>Let us show what DUALITE can do for your company <span class='uppercase'>${Company[0]}</span>.</p>`;
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
 
 
 
             }else if(video.currentTime > 2.7 && video.currentTime < 5){
-                videoElement.innerHTML = `<p class='playfair' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);font-size:40px;'>Let's go !</p>`;
+                videoElement.innerHTML = `<p class='figtree' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);font-size:40px;'>Let's go !</p>`;
                 videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;`;
 
 
@@ -426,10 +436,14 @@
 
 
 
-            }else if(video.currentTime > 21.2 && video.currentTime < 21.8){
+            }else if(video.currentTime > 21 && video.currentTime < 21.9){
                 videoElement.innerHTML = `<p class='inter twenty-one' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:400;font-size:50px;'>${Name[0]}</p>`;
                 videoElement.style.cssText = `display:block;top:45%;left:40%;z-index:11;opacity:1;transition:none;`;
 
+
+            }else if(video.currentTime > 40){
+                videoElement.innerHTML = `<button class='inter twenty-one' style='color:#fff;z-index:11;border:none;opacity:1;padding:2% 4% 2% 6%;border-radius:20px 0 0 20px;font-weight:400;font-size:28px;background-color:#5d52f7;position:absolute;bottom:20%;right:0;'>Done</button>`;
+                videoElement.style.cssText = `display:block;bottom:20%;right:0;z-index:11;opacity:1;transition:none;`;
 
             }else{
                 videoElement.style.display = `none`;
@@ -439,8 +453,15 @@
             
             
         })
+
             </script>
 
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
            
 <!-- Start of HubSpot Embed Code -->
 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/21805225.js"></script>
