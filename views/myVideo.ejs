@@ -157,6 +157,7 @@
         .uppercase{
             text-transform: uppercase;
         }
+        
 
         @media only screen and (max-width:768px) {
      
@@ -178,6 +179,7 @@
             .alert{
                 margin: 0 auto;
             }
+           
 
 }
 .main-vid-container h1{
@@ -232,6 +234,9 @@
             }
             body{
                 align-items: flex-start;
+            }
+            .fourteen{
+            font-size: 14px !important;
             }
         }
     </style>
@@ -399,7 +404,7 @@
 
 
             }else if(video.currentTime > 9.5 && video.currentTime < 9.9){
-                videoElement.innerHTML = `<p class='inter' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:28px;'>${Name[0]}</p>`;
+                videoElement.innerHTML = `<span class='inter fourteen' style='color:#fff;z-index:11;opacity:1;text-transform:capitalize;filter:blur(0px);color:#000;font-weight:600;font-size:28px;'>${Name[0]}</span>`;
                 // videoElement.style.cssText = `display:flex;justify-content:center;align-items:center;opacity:1;position:relative;height:100%;top:0;left:0;width:100%;transition:0.2s all ease;`;
                 videoElement.style.cssText = `display:block;top:36%;left:46%;z-index:11;opacity:1;`;
                 
@@ -410,10 +415,10 @@
             }else if(video.currentTime > 10 && video.currentTime < 14.2){ 
                 if(Name[0].length < 7){
 
-                    videoElement.innerHTML = `<p class='inter pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:28px;'>${Name[0]}</p>`;
+                    videoElement.innerHTML = `<div class=' fourteen inter pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;text-transform:capitalize;font-size:28px;'>${Name[0]}</div>`;
                     videoElement.style.cssText = `display:block;top:25%;left:46%;z-index:11;opacity:1;`;
                 }else{
-                    videoElement.innerHTML = `<p class='inter pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:22px;'>${Name[0]}</p>`;
+                    videoElement.innerHTML = `<div class='inter fourteen pizza-p-mobile' style='color:#fff;z-index:11;opacity:1;filter:blur(0px);color:#000;font-weight:600;font-size:22px;text-transform:capitalize;'>${Name[0]}</div>`;
                     videoElement.style.cssText = `display:block;top:26%;left:46%;z-index:11;opacity:1;`;
 
                 }
