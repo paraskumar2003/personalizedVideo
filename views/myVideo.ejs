@@ -460,6 +460,17 @@
         })
 
             </script>
+           <script>
+            function detectMob() {
+                let agent = this.navigator.userAgent.toLowerCase();
+    if (agent.includes('android') || agent.includes('iphone')){
+        console.log(true)
+    }else{
+        console.log(false);
+    }
+}
+setTimeout(()=>{detectMob()},1000)
+           </script>
 
 
 <!-- aos -->
